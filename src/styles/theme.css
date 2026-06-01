@@ -2,6 +2,17 @@
 @import '@fontsource-variable/geist';
 
 /*
+ * Always reserve the vertical scrollbar gutter. Without this, short pages
+ * (no scrollbar) and long pages (scrollbar present) have different content
+ * widths, so the centered layout - header included - jumps sideways by the
+ * scrollbar width when navigating between them. `stable` keeps the gutter
+ * reserved on every page so the layout width never changes.
+ */
+html {
+	scrollbar-gutter: stable;
+}
+
+/*
  * Typelets docs theme.
  *
  * Overrides Starlight's CSS custom properties to match the typelets.com
