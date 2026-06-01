@@ -11,6 +11,12 @@ export default defineConfig({
 			title: 'Typelets Docs',
 			description:
 				'Documentation for Typelets - collaborative code workspaces in your browser for interviews, mentoring, pair programming, and hosting.',
+			// Header logo: the Typelets sparkle mark (currentColor so it follows
+			// the theme) shown alongside the "Typelets Docs" wordmark.
+			logo: {
+				src: './src/assets/logo.svg',
+				alt: 'Typelets',
+			},
 			// Brand theme: sky-blue accent on neutral grays. See src/styles/theme.css.
 			customCss: ['./src/styles/theme.css'],
 			favicon: '/favicon.svg',

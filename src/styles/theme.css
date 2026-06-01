@@ -49,16 +49,10 @@
 }
 
 /* --- Site title: tighten + brand it --- */
-/* Hide the "Typelets Docs" wordmark in the header (keep the link clickable +
- * the title in config for browser-tab titles / SEO). The favicon + search +
- * nav carry the identity. */
-.site-title span {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	white-space: nowrap;
+/* Header: logo mark + "Typelets Docs" wordmark, tightened. */
+.site-title {
+	font-weight: 650;
+	letter-spacing: -0.01em;
 }
 
 /* --- Links: sky underline on hover, subtle --- */
