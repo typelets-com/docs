@@ -22,13 +22,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Build with Astro
         # withastro/action installs deps (npm, detected from package-lock.json),
         # runs `astro build`, and uploads ./dist as the Pages artifact.
-        # Pin Node 22: the action defaults to Node 20, but current Astro +
-        # @astrojs/mdx require Node >=22.12, so the default 20 fails the build.
-        uses: withastro/action@v3
+        # Pin Node 22 for the Astro build: @astrojs/mdx requires Node >=22.12.
+        # (v6 of the action runs its internal steps on the Node 24 runtime, off
+        # the deprecated Node 20 - DEV-25; node-version here is the build Node,
+        # separate from that runtime.)
+        uses: withastro/action@v6
         with:
           node-version: 22
 
@@ -41,4 +43,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
