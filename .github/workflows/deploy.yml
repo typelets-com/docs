@@ -26,7 +26,11 @@ jobs:
       - name: Build with Astro
         # withastro/action installs deps (npm, detected from package-lock.json),
         # runs `astro build`, and uploads ./dist as the Pages artifact.
+        # Pin Node 22: the action defaults to Node 20, but current Astro +
+        # @astrojs/mdx require Node >=22.12, so the default 20 fails the build.
         uses: withastro/action@v3
+        with:
+          node-version: 22
 
   deploy:
     needs: build
