@@ -1,3 +1,6 @@
+/* Match typelets.com's typeface: Geist (variable). Import must precede rules. */
+@import '@fontsource-variable/geist';
+
 /*
  * Typelets docs theme.
  *
@@ -30,6 +33,9 @@
 
 	/* Rounded, modern feel to match the marketing site. */
 	--sl-content-width: 50rem;
+
+	/* Typeface: Geist, matching typelets.com. */
+	--sl-font: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Light theme: darker accent for contrast on white, inverted gray ramp. */
@@ -49,10 +55,11 @@
 }
 
 /* --- Site title: tighten + brand it --- */
-/* Header: logo mark + "Typelets Docs" wordmark, tightened. */
+/* Header: logo mark + "Typelets Docs" wordmark, tightened + slightly smaller. */
 .site-title {
-	font-weight: 650;
+	font-weight: 600;
 	letter-spacing: -0.01em;
+	font-size: var(--sl-text-sm);
 }
 /* Match the marketing site's logo treatment: rounded corners + subtle ring,
  * sized to the header. The mark is a raster PNG on a black square. */
