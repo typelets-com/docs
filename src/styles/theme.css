@@ -100,6 +100,22 @@
 	transform: translateY(-2px);
 }
 
+/* --- Home (splash) card grid: 4 across on wide screens --- */
+/* Starlight's CardGrid defaults to 2 columns at >=50rem. On the splash home
+ * page we have 4 feature cards and want them on one row when there's room,
+ * collapsing to 2-up then 1-up on smaller screens. Scope to .hero's sibling
+ * content (the splash layout) so doc-page CardGrids keep the default. */
+@media (min-width: 72rem) {
+	.sl-markdown-content .card-grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+@media (min-width: 50rem) and (max-width: 71.99rem) {
+	.sl-markdown-content .card-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
 /* --- Sidebar current item: brand tint --- */
 .sidebar a[aria-current='page'],
 .sidebar a[aria-current='page']:hover {
