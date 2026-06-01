@@ -12,6 +12,13 @@ export default defineConfig({
 			title: 'Typelets Docs',
 			description:
 				'Documentation for Typelets - a collaborative IDE with persistent, hostable preview workspaces.',
+			// Brand theme: sky-blue accent on neutral grays. See src/styles/theme.css.
+			customCss: ['./src/styles/theme.css'],
+			favicon: '/favicon.svg',
+			head: [
+				{ tag: 'link', attrs: { rel: 'icon', href: '/favicon.ico', sizes: '32x32' } },
+				{ tag: 'link', attrs: { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' } },
+			],
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/typelets-com' },
 			],

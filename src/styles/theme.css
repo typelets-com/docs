@@ -1,0 +1,108 @@
+/*
+ * Typelets docs theme.
+ *
+ * Overrides Starlight's CSS custom properties to match the typelets.com
+ * brand: a sky-blue accent (Tailwind sky-400/500/600) on a near-neutral gray
+ * scale, with a subtle gradient hero. We only set design tokens here -
+ * Starlight's components read these variables, so we get themed nav, sidebar,
+ * search, links, and callouts without touching component markup.
+ *
+ * Accent reference (Tailwind):
+ *   sky-300 #7dd3fc  sky-400 #38bdf8  sky-500 #0ea5e9
+ *   sky-600 #0284c7  sky-700 #0369a1  sky-950 #082f49
+ */
+
+:root {
+	/* --- Accent: sky blue --- */
+	--sl-color-accent-low: #082f49; /* sky-950 - tints/borders in dark */
+	--sl-color-accent: #0ea5e9; /* sky-500 - primary accent */
+	--sl-color-accent-high: #bae6fd; /* sky-200 - high-contrast accent text */
+
+	/* Slightly warmer/neutral grays so the blue reads as the only hue. */
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #e7e9ee;
+	--sl-color-gray-2: #c0c4cd;
+	--sl-color-gray-3: #888e9c;
+	--sl-color-gray-4: #555b69;
+	--sl-color-gray-5: #353a45;
+	--sl-color-gray-6: #21252e;
+	--sl-color-black: #14161b;
+
+	/* Rounded, modern feel to match the marketing site. */
+	--sl-content-width: 50rem;
+}
+
+/* Light theme: darker accent for contrast on white, inverted gray ramp. */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #e0f2fe; /* sky-100 */
+	--sl-color-accent: #0284c7; /* sky-600 */
+	--sl-color-accent-high: #0c4a6e; /* sky-900 */
+	--sl-color-white: #14161b;
+	--sl-color-gray-1: #21252e;
+	--sl-color-gray-2: #353a45;
+	--sl-color-gray-3: #6b7280;
+	--sl-color-gray-4: #888e9c;
+	--sl-color-gray-5: #c0c4cd;
+	--sl-color-gray-6: #e7e9ee;
+	--sl-color-gray-7: #f3f4f6;
+	--sl-color-black: #ffffff;
+}
+
+/* --- Site title: tighten + brand it --- */
+.site-title {
+	font-weight: 650;
+	letter-spacing: -0.01em;
+}
+
+/* --- Links: sky underline on hover, subtle --- */
+.sl-markdown-content a:not(:where(.not-content *)) {
+	text-decoration-color: var(--sl-color-accent);
+	text-underline-offset: 0.2em;
+}
+
+/* --- Hero (splash home page): subtle sky->transparent glow behind it --- */
+.hero {
+	position: relative;
+}
+.hero::before {
+	content: '';
+	position: absolute;
+	inset: -10% -20% auto -20%;
+	height: 360px;
+	background: radial-gradient(
+		60% 80% at 50% 0%,
+		color-mix(in oklab, var(--sl-color-accent) 22%, transparent),
+		transparent 70%
+	);
+	filter: blur(40px);
+	pointer-events: none;
+	z-index: -1;
+}
+
+/* Hero CTA: make the primary action read as a solid brand button. */
+.hero .actions a[data-variant='primary'] {
+	background: var(--sl-color-accent);
+	border-color: var(--sl-color-accent);
+	color: #ffffff;
+}
+.hero .actions a[data-variant='primary']:hover {
+	background: color-mix(in oklab, var(--sl-color-accent) 88%, black);
+}
+
+/* --- Cards: lift on hover so the home grid feels interactive --- */
+.card {
+	transition:
+		border-color 150ms ease,
+		transform 150ms ease;
+}
+.card:hover {
+	border-color: color-mix(in oklab, var(--sl-color-accent) 50%, var(--sl-color-gray-5));
+	transform: translateY(-2px);
+}
+
+/* --- Sidebar current item: brand tint --- */
+.sidebar a[aria-current='page'],
+.sidebar a[aria-current='page']:hover {
+	background-color: color-mix(in oklab, var(--sl-color-accent) 16%, transparent);
+	color: var(--sl-color-white);
+}
