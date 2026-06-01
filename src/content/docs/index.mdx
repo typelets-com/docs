@@ -1,9 +1,9 @@
 ---
 title: Typelets
-description: A collaborative IDE with persistent, hostable preview workspaces.
+description: Collaborative code workspaces in your browser - for interviews, mentoring, pair programming, and hosting.
 template: splash
 hero:
-  tagline: A collaborative IDE where a workspace can run a real, always-on app and serve it at a stable URL.
+  tagline: Workspaces for code, together. Real-time editing, sandboxed execution, and recording in the browser - no install.
   actions:
     - text: Quickstart
       link: /start/quickstart/
@@ -16,28 +16,36 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## What you can do with Typelets
+## What Typelets does
 
 <CardGrid>
-	<Card title="Host a static site" icon="rocket">
-		Serve a real public site out of your workspace with a production static
-		server, behind your own domain. See [Host a static site](/hosting/static-site/).
+	<Card title="Collaborate in real time" icon="pencil">
+		Multi-file editing with live cursors (Yjs CRDTs), a shared terminal, and
+		optional video - all in one workspace. See [Collaboration](/collaboration/editing/).
 	</Card>
-	<Card title="Keep an app always on" icon="setting">
-		Turn on persistent preview and your container stays warm, so a web app,
-		API, or bot keeps running. See [Persistent preview](/hosting/persistent-preview/).
+	<Card title="Run code safely" icon="rocket">
+		Every workspace executes in its own isolated sandbox, with output
+		streaming back live. See [Running code](/running-code/sandbox/).
 	</Card>
-	<Card title="Bring your own domain" icon="approve-check">
-		Point a custom domain at a workspace via Cloudflare. See
-		[Custom domains](/hosting/custom-domains/).
+	<Card title="Conduct interviews" icon="seti:notebook">
+		Apply a problem, run a timed session, record it, and score against a
+		rubric. See [Interviews](/interviews/overview/).
 	</Card>
-	<Card title="Automate with MCP" icon="puzzle">
-		Drive workspaces and files from an MCP-capable client. See
-		[MCP server](/automation/mcp/).
+	<Card title="Host real apps & sites" icon="setting">
+		Keep a workspace warm and serve a site or app at a stable URL, behind
+		your own domain. See [Hosting](/hosting/persistent-preview/).
+	</Card>
+	<Card title="Automate with MCP & PATs" icon="puzzle">
+		Drive workspaces and files from an MCP client or the REST API. See
+		[Automation](/automation/mcp/).
+	</Card>
+	<Card title="No install" icon="laptop">
+		Pure browser. Any platform, any device. Spectate from your phone.
+		See [Mobile view](/collaboration/mobile/).
 	</Card>
 </CardGrid>
 
 ## New here?
 
-Start with the [Quickstart](/start/quickstart/), then read [Concepts](/start/concepts/)
-to understand how workspaces, previews, and persistence fit together.
+Start with the [Quickstart](/start/quickstart/), then read [Core concepts](/start/concepts/)
+to understand workspaces, previews, roles, and persistence.
