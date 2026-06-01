@@ -54,6 +54,14 @@
 	font-weight: 650;
 	letter-spacing: -0.01em;
 }
+/* Match the marketing site's logo treatment: rounded corners + subtle ring,
+ * sized to the header. The mark is a raster PNG on a black square. */
+.site-title img {
+	width: 1.75rem;
+	height: 1.75rem;
+	border-radius: 0.375rem;
+	box-shadow: 0 0 0 1px color-mix(in oklab, var(--sl-color-gray-1) 15%, transparent);
+}
 
 /* --- Links: sky underline on hover, subtle --- */
 .sl-markdown-content a:not(:where(.not-content *)) {

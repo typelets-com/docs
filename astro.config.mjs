@@ -11,17 +11,19 @@ export default defineConfig({
 			title: 'Typelets Docs',
 			description:
 				'Documentation for Typelets - collaborative code workspaces in your browser for interviews, mentoring, pair programming, and hosting.',
-			// Header logo: the Typelets sparkle mark (currentColor so it follows
-			// the theme) shown alongside the "Typelets Docs" wordmark.
+			// Header logo: the Typelets brand mark (matches the marketing site's
+			// /og-image.png), shown alongside the "Typelets Docs" wordmark.
 			logo: {
-				src: './src/assets/logo.svg',
+				src: './src/assets/logo.png',
 				alt: 'Typelets',
 			},
 			// Brand theme: sky-blue accent on neutral grays. See src/styles/theme.css.
 			customCss: ['./src/styles/theme.css'],
-			favicon: '/favicon.svg',
+			favicon: '/favicon.ico',
 			head: [
-				{ tag: 'link', attrs: { rel: 'icon', href: '/favicon.ico', sizes: '32x32' } },
+				// Use the real brand mark for the tab icon (matches the header logo),
+				// not the old sparkle. apple-touch-icon is the same PNG mark.
+				{ tag: 'link', attrs: { rel: 'icon', type: 'image/png', href: '/icon.png' } },
 				{ tag: 'link', attrs: { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' } },
 			],
 			social: [
