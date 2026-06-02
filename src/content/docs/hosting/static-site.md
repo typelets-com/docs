@@ -78,6 +78,33 @@ This keeps your source as the source of truth, but every container recreation
 re-runs the full install and build, so cold starts are slower. Use it when you
 want the workspace to be self-contained.
 
+## Single-page apps (React, Vite, Create React App)
+
+A client-rendered app (React, Vue, Svelte) is a static site once it is built, so
+the two models above apply: build it, then serve the output directory. The one
+addition is the `--spa` flag, which serves `index.html` for any route that does
+not match a file, so client-side routing and browser refreshes keep working
+instead of returning a 404:
+
+```bash
+npm ci && npm run build && typelets-static --dir /workspace/dist --port 3000 --spa
+```
+
+Point `--dir` at your framework's output directory (`dist/` for Vite, `build/`
+for Create React App). As with any site, building locally and uploading the
+output keeps cold starts faster than building in the container.
+
+Want a live dev server with hot reload while you iterate instead of a built
+bundle? Run it from a [persistent preview](/hosting/persistent-preview/) startup
+command. Vite needs `--host` to accept connections from the preview proxy:
+
+```bash
+npm install && npm run dev -- --host 0.0.0.0 --port 3000
+```
+
+Build-and-serve is the more reliable way to publish a public site; the dev
+server is best kept for iteration.
+
 ## Publishing updates
 
 To publish changes, update your files in the workspace, then
