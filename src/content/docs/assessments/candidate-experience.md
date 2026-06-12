@@ -30,9 +30,9 @@ for every candidate and cannot be extended by tampering with the client.
 
 ## The AI assistant
 
-If you enabled it for the assessment, the candidate has a coding **AI assistant**
-in the workspace - a chat panel beside the editor they can use the way they would
-day to day.
+If you enabled it for the assessment, the candidate has **Claude Code** in the
+workspace terminal - the same agentic CLI they would use day to day. They run it
+from the shell alongside their code; there is no separate chat panel.
 
 - It runs against a **hard budget** scoped to the assessment. When the budget is
   spent, the assistant stops responding. Every candidate gets the same allowance,
