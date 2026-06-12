@@ -10,7 +10,7 @@ export default defineConfig({
 		starlight({
 			title: 'Typelets Docs',
 			description:
-				'Documentation for Typelets - collaborative code workspaces in your browser for interviews, mentoring, pair programming, and hosting.',
+				'Documentation for Typelets - collaborative code workspaces in your browser for interviews, take-home assessments, mentoring, pair programming, and hosting.',
 			// Header logo: the Typelets brand mark (matches the marketing site's
 			// /og-image.png), shown alongside the "Typelets Docs" wordmark.
 			logo: {
