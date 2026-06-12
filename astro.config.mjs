@@ -70,6 +70,16 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'Take-home assessments',
+					items: [
+						{ label: 'Overview', slug: 'assessments/overview' },
+						{ label: 'Inviting candidates', slug: 'assessments/inviting-candidates' },
+						{ label: 'The candidate experience', slug: 'assessments/candidate-experience' },
+						{ label: 'Reviewing submissions', slug: 'assessments/reviewing-submissions' },
+						{ label: 'Grading', slug: 'assessments/grading' },
+					],
+				},
+				{
 					label: 'Hosting',
 					items: [
 						{ label: 'Persistent preview', slug: 'hosting/persistent-preview' },

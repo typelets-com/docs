@@ -14,8 +14,10 @@ each criterion on a **1-5 scale** with optional notes, plus an overall notes
 field. Scores are saved on the workspace and visible only to interviewer-side
 roles.
 
-Scoring is **entered by a human**. Typelets does not auto-grade - the score is
-the interviewer's judgment.
+Scoring is **entered by a human** - the score is the interviewer's judgment.
+For take-home assessments, [Draft with AI](/assessments/grading/) can propose a
+first pass of scores and notes that you then edit, but it never writes the final
+score for you.
 
 ## Who can score and see scores
 
